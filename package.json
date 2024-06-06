@@ -1,5 +1,5 @@
 {
-  "name": "fachrizalapi",
+  "name": "postgresapi",
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
@@ -7,6 +7,10 @@
     "dev": "nodemon server.js",
     "vercel-build": "echo hello world"
   },
+  "keywords": [],
+  "author": "Muhammad Fachrizal Giffari (22/504570/TK/55192)",
+  "license": "ISC",
+  "description": "Membuat REST API dengan Node.js, Express.js, dan PostgreSQL untuk Mata Kuliah Teknologi Basis Data",
   "dependencies": {
     "bcrypt": "^5.1.1",
     "body-parser": "^1.20.2",
