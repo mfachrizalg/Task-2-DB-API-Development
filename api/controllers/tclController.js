@@ -3,7 +3,7 @@ const queries = require('../queries/tclQuery');
 
 const bookTransaction = (req, res) => {
     const {bookid, title, publisherid, isbn, pages, publisheddate, authorid} = req.body;
-    pool.query("BEGIN;",(error, results) => {
+    pool.query("BEGIN",(error, results) => {
         pool.query(queries.bookTransaction1, [bookid, title, publisherid, isbn, pages, publisheddate], (error, results) => {
             if (error) res.status(400).json({'message' :`${error}`});
             pool.query(queries.bookTransaction2, [authorid], (error, results) => {
