@@ -1,9 +1,7 @@
 # API for PostgreSQL
-Made by Muhammad Fachrizal Giffari (22/504570/TK/55192)
- # TBD - TASK 2: API Development
+> Muhammad Fachrizal Giffari | (22/504570/TK/55192)
 
 > [!NOTE]
-> Syaifullah Hilmi Ma'arij | 22/497775/TK/54568
 
 This source code is created to fulfill the final project requirements for TBD, focusing on API development for the _Good Reading Bookstore_, built using JavaScript with the Express framework from NodeJS.
 
