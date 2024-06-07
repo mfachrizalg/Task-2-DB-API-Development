@@ -12,10 +12,8 @@
   "license": "ISC",
   "description": "Membuat REST API dengan Node.js, Express.js, dan PostgreSQL untuk Mata Kuliah Teknologi Basis Data",
   "dependencies": {
-    "bcrypt": "^5.1.1",
     "body-parser": "^1.20.2",
     "express": "^4.19.2",
-    "mime": "^4.0.3",
     "nodemon": "^3.1.3",
     "pg": "^8.12.0"
   }
