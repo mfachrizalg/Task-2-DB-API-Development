@@ -1,5 +1,5 @@
-const searchByISBN = "SELECT * FROM book WHERE isbn = $1"
+const getSomeBook = "SELECT TOP $1 * FROM book"
 
 module.exports = {
-    searchByISBN
+    getSomeBook
 }

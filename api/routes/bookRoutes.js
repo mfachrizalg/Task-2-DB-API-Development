@@ -1,7 +1,8 @@
-const {getBooksByISBN} = require('../controllers/bookController');
+const {getBooks,getBooksbyISBN} = require('../controllers/bookController');
 const express = require('express');
 const router = express.Router();
 
-router.get('/:isbn',getBooksByISBN);
+router.get('/',getBooks);
+router.get('/search',getBooksbyISBN);
 
 module.exports = router;
