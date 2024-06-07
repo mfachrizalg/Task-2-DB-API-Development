@@ -2,30 +2,30 @@ const pool = require('../config/db');
 const queries = require('../queries/wishlistQuery');
 
 const addWishlist = (req, res) => {
-    const {isbn, username} = req.body;
-    pool.query(queries.addWishlist, [isbn, username], (error, results) => {
+    const {userid, bookid} = req.body;
+    pool.query(queries.addWishlistbyUserID, [userid, bookid], (error, results) => {
         if (error) res.status(400).json({'message' :`${error}`});
         res.status(200).json(results.rows);
     });
 }
 
-const getWishlistbyUser = (req, res) => {
-    const username = req.params.username;
-    pool.query(queries.getWishlistbyUser, [username], (error, results) => {
+const getWishlist = (req, res) => {
+    const userid = req.params.id;
+    pool.query(queries.getWishlistbyUserID, [userid], (error, results) => {
         if (error) res.status(400).json({'message' :`${error}`});
         res.status(200).json(results.rows);
     });
 }
 
-const deleteWishlistbyUser = (req, res) => {
-    const {isbn, username} = req.body;
-    pool.query(queries.deleteWishlistbyUser, [isbn, username], (error, results) => {
+const deleteWishlist = (req, res) => {
+    const {userid, bookid} = req.body;
+    pool.query(queries.deleteWishlistbyUserID, [userid, bookid], (error, results) => {
         if (error) res.status(400).json({'message' :`${error}`});
-        res.status(200).json(results.rows);
+        res.status(200).json(results);
     });
 }
 module.exports = {
     addWishlist,
-    getWishlistbyUser,
-    deleteWishlistbyUser
+    getWishlist,
+    deleteWishlist
 }

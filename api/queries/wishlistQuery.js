@@ -1,9 +1,9 @@
-const addWishlist = "SELECT * FROM wishlist WHERE user_id = $1 AND product_id = $1"
-const getWishlistbyUser = "SELECT * FROM wishlist WHERE user_id = $1"
-const deleteWishlistbyUser = "DELETE FROM wishlist WHERE user_id = $1 AND product_id = $1"
+const addWishlistbyUserID = "INSERT INTO wishlist (userid, bookid) VALUES ($1, $2) RETURNING *"
+const getWishlistbyUserID = "SELECT * FROM wishlist WHERE userid = $1"
+const deleteWishlistbyUserID = "DELETE FROM wishlist WHERE userid = $1 AND bookid = $2"
 
 module.exports = {
-    addWishlist,
-    getWishlistbyUser,
-    deleteWishlistbyUser
+    addWishlistbyUserID,
+    getWishlistbyUserID,
+    deleteWishlistbyUserID
 }
