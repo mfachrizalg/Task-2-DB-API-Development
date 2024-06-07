@@ -2,11 +2,16 @@ const pool = require('../config/db');
 
 const getBooks = (req, res) => {
     const limit = req.body.limit;
-    const query = `SELECT * FROM book LIMIT ${limit}`
-    pool.query(query, (error, results) => {
+    if (limit == -1){ 
+        pool.query("SELECT * FROM book", (error, results) => {
         if (error) res.status(400).json({'message' :`${error}`});
         res.status(200).json(results.rows);
-    });
+    })} else {
+        const query = `SELECT * FROM book LIMIT ${limit}`
+        pool.query(query, (error, results) => {
+        if (error) res.status(400).json({'message' :`${error}`});
+        res.status(200).json(results.rows);
+    })};
 }
 
 const getBooksbyISBN = (req, res) => {
